@@ -1,0 +1,2 @@
+module SalesInfo2sHelper
+end

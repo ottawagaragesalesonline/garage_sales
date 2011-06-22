@@ -1,0 +1,47 @@
+<h1>Listing Garage Sales for Ottawa</h1>
+
+ <table>
+ # <tr>
+  #  <th>Sales ofdate</th>
+   # <th>Sales title</th>
+   # <th>Sales addr</th>
+   # <th>Sales addr2</th>
+    # <th>Sales location</th>
+   # <th>Sales desc</th>
+   # <th>Sales desc2</th>
+   # <th>Sales bold</th>
+   # <th>Sales star</th>
+   # <th>Sales first</th>
+   # <th></th>
+   # <th></th>
+   # <th></th>
+ # </tr>
+
+<% for sales_info7 in @sales_info7s %>
+<TR class="<%= cycle('list-line-odd', 'list-line-even') %>">
+
+<%=h sales_info7.sales_title %>
+
+<%=h truncate(sales_info7.sales_desc.gsub(/<.*?>/,''), :length => 20) %>
+<% end %>
+</TR>
+# <% @sales_info7s.each do |sales_info7| %>
+ # <tr>
+  #  <td><%= sales_info7.sales_ofdate %></td>
+   # <td><%= sales_info7.sales_title %></td>
+#    <td><%= sales_info7.sales_addr %></td>
+ #   <td><%= sales_info7.sales_addr2 %></td>
+  #  <td><%= sales_info7.sales_location %></td>
+   # <td><%= sales_info7.sales_desc %></td>
+ #   <td><%= sales_info7.sales_desc2 %></td>
+  #  <td><%= sales_info7.sales_bold %></td>
+   # <td><%= sales_info7.sales_star %></td>
+   # <td><%= sales_info7.sales_first %></td>
+   # <td><%= link_to 'Show', sales_info7 %></td>
+   # <td><%= link_to 'Edit', edit_sales_info7_path(sales_info7) # %></td>
+   # <td><%= link_to 'Destroy', sales_info7, :confirm => 'Are you sure?', :method => :delete %></td>
+  # </tr>
+# <% end %>
+
+# <TR> <%= link_to 'New Sales info7', new_sales_info7_path %> # # </TR>
+# </TABLE>

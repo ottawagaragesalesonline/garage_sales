@@ -1,0 +1,58 @@
+<HTML><HEAD>
+<SCRIPT LANGUAGE="JavaScript">
+<!
+(function () { 
+var allowSubmit = true; 
+frm.onsubmit = function () { 
+if (allowSubmit) 
+allowSubmit = false; 
+else 
+return false; 
+} 
+})();
+-->
+</script> 
+
+</HEAD>
+<BODY>
+<%= form_for(@sales_info7) do |f| %>
+  <%= render "shared/error_messages", :target => @sales_info7 %>
+
+  <div class="field">
+ <H1>Date of Sale</H1>All sales 7 days old will be deleted<br />
+    <%= f.text_field :sales_ofdate %>
+  </div>
+  <div class="field">
+ <H1>Title of Sale</H1>This is the title that wll be shown in the listing page<br />
+    <%= f.text_field :sales_title %>
+  </div>
+  <div class="field">
+ <H1>Address of the sale</H1>Where the sales address is<br />
+    <%= f.text_field :sales_addr %>
+  </div>
+  <div class="field">
+  <H1>Location of sale</H1>Will always be Ottawa<br />
+    <%= f.text_field :sales_location %>
+  </div>
+  <div class="field">
+  <H1>Description of the sale</H1>Things you are selling ie:Furniture, Antiques, collectables etc<br />
+    <%= f.text_area :sales_desc %>
+  </div>
+  <div class="field">
+   <H1>Would you like your listing in <B>BOLD</B>?</H1>This will cost 3$ please enter 'Yes' or 'No'<br />
+    <%= f.text_field :sales_bold %>
+  </div>
+  <div class="field">
+    <H1>Would you like a star * beside ypur listing?</H1>This will cost 3$ please enter 'Yes' or 'No'<br />
+    <%= f.text_field :sales_star %>
+  </div>
+  <div class="field">
+    <%= f.label :sales_first %><br />
+    <%= f.text_field :sales_first %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+</BODY>
+</HTML>

@@ -1,0 +1,137 @@
+<HTML>
+  <HEAD>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" /> 
+<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=true&amp;key=ABQIAAAAbczZt3rIVoXTCx34bqu4aRQTMLpjTq-NQ7NT1x9FVUr6r6OkRxQkz4Db4jmzrasLob2aVllZjQJV6A" type="text/javascript"></script> 
+<script type="text/javascript">
+ 
+ var geocoder; 
+ var map; 
+ var address = "<%= @sales_info7.sales_addr %>, ottawa, ont"; 
+
+
+function initialize() { 
+// Create new map object 
+map = new GMap2(document.getElementById("map")); 
+map.addControl(new GSmallMapControl()); 
+
+// Create new geocoding object 
+geocoder = new GClientGeocoder();
+// Retrieve location information, pass it to addToMap() 
+geocoder.getLocations(address, addToMap); 
+} 
+// This function adds the point to the map 
+function addToMap(response) 
+{ 
+// Retrieve the object 
+place = response.Placemark[0]; 
+// Retrieve the latitude and longitude 
+point = new GLatLng(place.Point.coordinates[1], 
+place.Point.coordinates[0]); 
+// Center the map on this point 
+map.setCenter(point, 13); 
+// Create a marker 
+marker = new GMarker(point); 
+// Add the marker to map 
+map.addOverlay(marker);
+// Add address information to marker 
+// marker.openInfoWindowHtml(place.address);
+} 
+
+</script> 
+  <TITLE>Welcome to Ottawa Garage Sales Online</TITLE>
+  </HEAD>
+  <BODY>
+   <TABLE BORDER = "2" CELLSPACING = "no" CELLPADDING = "no" WIDTH = "77%" ALIGN = "CENTER" BORDERCOLOR = "DARKGREEN" BGCOLOR = "LIGHTGREEN" FRAME = "Hsides" RULES = "ROWS">
+   <TR>
+    <TD HEIGHT = "150" COLSPAN = "8"><FONT COLOR = "BLUE" SIZE = "10">
+<IMG SRC = "/images/garage_logo.gif" WIDTH = "577" HEIGHT = "100"></TD>
+    <TD><CENTER><!-- Begin WeatherLink Flash Fragment -->
+<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=10,0,0,0" width="190" height="125">
+	<param name="movie" value="http://dd.weatheroffice.gc.ca/lib/flash/wxlink_e.swf" />
+	<param name="FlashVars" value="cityCode=on-118&amp;siteCode=s0000430&amp;provCode=ON&amp;language=e" />
+	<param name="quality" value="high" />
+	<embed src="http://dd.weatheroffice.gc.ca/lib/flash/wxlink_e.swf" FlashVars="cityCode=on-118&amp;siteCode=s0000430&amp;provCode=ON&amp;language=e" quality="high" pluginspage="http://www.adobe.com/go/getflashplayer" type="application/x-shockwave-flash" width="190" height="125" /> 
+</object>
+<!-- End WeatherLink Flash Fragment --></CENTER></TD>
+   </TR>
+</TABLE>
+<TABLE BORDER = "0" ALIGN = "CENTER" WIDTH = "77%" cellpadding = "0" cellspacing = "no">
+   <TR><TD BGCOLOR = "SILVER" HEIGHT = "7" COLSPAN = "12">
+
+</TD></TR>
+	 <TR COLSPAN = "10" ALIGN = "CENTER">
+	  <TD BGCOLOR = "LIGHTBLUE"><FONT COLOR = "WHITE"><B><a href="/welcome_sales/home">Home</A></B></FONT></TD>
+<TD BGCOLOR = "LIGHTBLUE"><FONT COLOR = "WHITE"><B><a href="/sales_info7s">List Sales</A></B></FONT></TD>
+	  
+	  
+	  	  <TD BGCOLOR = "LIGHTBLUE"><FONT COLOR = "WHITE"><B><A HREF = "/extra/advertise">Advertise</A></B></FONT></TD>
+			  <TD BGCOLOR = "LIGHTBLUE"><FONT COLOR = "WHITE"><B><A HREF = "/extra/login_extra">Login</A></B></FONT></TD>
+				  <TD BGCOLOR = "LIGHTBLUE"><FONT COLOR = "WHITE"><B><A HREF = "/extra/aboutus">About Us</A></B></FONT></TD>
+				  	  <TD BGCOLOR = "LIGHTBLUE"><FONT COLOR = "WHITE"><B><A HREF = "/supports/new">Free Sales</A></B></FONT></TD>
+					  	  <TD BGCOLOR = "LIGHTBLUE"><FONT COLOR = "WHITE"><B><A HREF = "/supports/new">Contact</A></B></FONT></TD></TR> 
+
+	 <TR><TD HEIGHT = "7" BGCOLOR = "SILVER" COLSPAN = "12"><FONT COLOR = "SILVER"></FONT></TD></TR>
+   </TABLE>
+
+  <TITLE>Welcome to Ottawa Garage Sales Online</TITLE>
+  </HEAD>
+    <body onload="initialize()">  
+
+
+   <p id="notice"><%= notice %></p>
+
+<TABLE BGCOLOR = "WHITE" ALIGN = "CENTER" BORDER = "0" CELLSPACING = "3" CELLPADDING = "3" style="border: 2px solid #000;" WIDTH = "33%">
+<TR>
+<TD BGCOLOR = "LIGHTBLUE" WIDTH = "10%"><FONT COLOR = "DARKGREEN" SIZE = "2" VALIGN = "CENTER">Date of Sale</FONT>
+  </TD>
+<TD BGCOLOR = "LIGHTBLUE" WIDTH = "15%"><FONT COLOR ="BLACK" SIZE = "2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= @sales_info7.sales_ofdate %></FONT>
+  </TD>
+<TD ROWSPAN = "12" VALIGN = "TOP" WIDTH = "20%"><div id="map" style='width:300px; height:275px;'></div> 
+<BR><BR><BLOCKQUOTE><FONT COLOR = "GREEN" SIZE = "2">
+How do I use the map?
+<UL><LI>The <FONT COLOR = "RED" SIZE = "2">red</FONT> arrow shows you where the Garage Sale is.
+<LI>You can "Zoom" into the map. This will show you a more detailed view of the streets.
+<LI>To "Zoom" Use the "+" and "-" buttons on the top left.
+<LI>To move the map around the point - Use the "<" and ">" arrows. Or you can "Click your mouse on the map and hold, then drag the map back and forth".
+<LI>The map will automatically take the address you provided and show you where the Garage Sale is.
+</UL></BLOCKQUOTE></FONT>
+
+</TD>
+</TR>
+<TR><TD COLSPAN = "2" BGCOLOR = "WHITE" HEIGHT = "5%">&nbsp;</TD></TR>
+<TR>
+<TD BGCOLOR = "LIGHTBLUE"><FONT COLOR = "DARKGREEN" SIZE = "2" VALIGN = "CENTER">Title of Sale</FONT>
+  </TD>
+  <TD WIDTH = "12%" BGCOLOR = "LIGHTBLUE"><FONT COLOR ="BLACK" SIZE = "2">&nbsp;&nbsp;&nbsp;&nbsp;<%= @sales_info7.sales_title %></FONT>
+</TD>
+</TR>
+<TR><TD COLSPAN = "2" BGCOLOR = "WHITE" HEIGHT = "10%">&nbsp;</TD></TR>
+<TR>
+<TD BGCOLOR = "LIGHTBLUE"><FONT COLOR = "DARKGREEN" SIZE = "2" VALIGN = "CENTER">Address of Sale</FONT>
+  </TD>
+  <TD BGCOLOR = "LIGHTBLUE" WIDTH = "12%"><FONT COLOR ="BLACK" SIZE = "2">&nbsp;&nbsp;&nbsp;&nbsp;<%= @sales_info7.sales_addr %></FONT>
+</TD>
+</TR>
+<TR><TD COLSPAN = "2" BGCOLOR = "WHITE" HEIGHT = "10%">&nbsp;</TD></TR>
+<TR><TD COLSPAN = "2" BGCOLOR = "WHITE" HEIGHT = "10%">&nbsp;</TD></TR>
+<TR>
+<TD BGCOLOR = "LIGHTBLUE"><FONT COLOR = "DARKGREEN" SIZE = "2" VALIGN = "CENTER">City of Sale</FONT>
+  </TD>
+  <TD WIDTH = "12%" BGCOLOR = "LIGHTBLUE"><FONT COLOR ="BLACK" SIZE = "2">&nbsp;&nbsp;&nbsp;&nbsp;Ottawa</FONT>
+</TD>
+</TR>
+<TR><TD COLSPAN = "2" BGCOLOR = "WHITE" HEIGHT = "10%">&nbsp;</TD></TR>
+<TR>
+<TD BGCOLOR = "LIGHTBLUE"><FONT COLOR = "DARKGREEN" SIZE = "2" VALIGN = "CENTER">Description of Sale</FONT>
+  </TD>
+  <TD BGCOLOR = "LIGHTBLUE" WIDTH = "12%"><FONT COLOR ="BLACK" SIZE = "2">
+<DIV><BLOCKQUOTE><%= @sales_info7.sales_desc %></BLOCKQUOTE></DIV></FONT>
+</TD>
+</TR>
+<TR><TD><FONT COLOR = "DARKBLUE" SIZE = "3"><B><CENTER><%= link_to 'Back', sales_info7s_path %></B></FONT></CENTER>
+</TD>
+<TD WIDTH = "33%"><a href="http://www.quick-counter.net/" title="HTML hit counter - Quick-counter.net"><img src="http://www.quick-counter.net/aip.php?tp=bb&tz=Canada%2FEastern" WIDTH = "177" HEIGHT = "63" alt="HTML hit counter - Quick-counter.net" border="0" /></a>
+</TR>
+</TABLE>
+</BODY>
+</HTML>

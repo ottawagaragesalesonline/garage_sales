@@ -1,0 +1,39 @@
+<HTML>
+  <HEAD>
+  <TITLE>Welcome to Ottawa Garage Sales Online</TITLE>
+  </HEAD>
+  <BODY>
+<% form_for @support, :url => { :action => "create" }, :html => { :method => :post } do |f| %>
+  <p>
+    <FONT COLOR = "BLUE" SIZE = "3"><B>&nbsp;&nbsp;&nbsp;Name</B></FONT>
+<FONT COLOR = "GREEN" SIZE = "2">Name of seller</FONT>
+  </p>
+  <p>
+    &nbsp;&nbsp;&nbsp;<%= f.text_field :sender_name %>
+  </p>
+  <p>
+    <FONT COLOR = "BLUE" SIZE = "3"><B>&nbsp;&nbsp;&nbsp;Email</B></FONT><FONT COLOR = "GREEN" SIZE = "2">&nbsp;&nbsp;Used to contact you</FONT>
+  </p>
+  <p>
+    &nbsp;&nbsp;&nbsp;<%= f.text_field :email %>
+  </p>
+  <p>
+    &nbsp;&nbsp;&nbsp;<FONT COLOR = "BLUE" SIZE = "3"><B>Type</B></FONT>
+  </p>
+  <p>
+    &nbsp;&nbsp;&nbsp;<%= f.select :support_type, options_for_select(["Add Garage Sale" , "List Auction" ,"Ask a question" , "Advertise"]) %>
+  </p>
+  <p>
+    &nbsp;&nbsp;&nbsp;<FONT COLOR = "BLUE" SIZE = "3"><B>Details</B></FONT><BR><FONT COLOR = "GREEN" SIZE = "2">
+&nbsp;&nbsp;&nbsp;Please include : Street Address,<BR>&nbsp;&nbsp;&nbsp;Date of Sale, and a description<BR>
+&nbsp;&nbsp;&nbsp;of what you will have at your garage sale.</FONT>
+  </p>
+  <p>
+    &nbsp;&nbsp;&nbsp;<%= f.text_area :content %>
+  </p>
+  <p>
+    <%= f.submit "Submit" %>
+  </p>
+<% end %>
+</BODY>
+</HTML>

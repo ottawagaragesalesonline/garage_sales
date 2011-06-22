@@ -1,0 +1,38 @@
+<HTML>
+  <HEAD>
+    <TITLE>Welcome to Ottawa Garage Sales Online</TITLE>
+  </HEAD>
+  <BODY>
+   <TABLE BORDER = "0" CELLSPACING = "no" CELLPADDING = "no" WIDTH = "77%" ALIGN = "CENTER">
+     <TR>
+	  <TD HEIGHT = "150" COLSPAN = "10"><FONT COLOR = "BLUE" SIZE = "10">GARAGESALES LOGO</TD>
+	  <TD><CENTER>ADVERTISE HERE</CENTER></TD>
+	 </TR>
+	 <TR COLSPAN = "10" ALIGN = "CENTER">
+	  <TD BGCOLOR = "LIGHTBLUE"><FONT COLOR = "WHITE"><B><a href="/sales_info7s">list sales</A></B></FONT></TD>
+	  <TD BGCOLOR = "WHITE" WIDTH = "4"></TD>
+	  	  <TD BGCOLOR = "LIGHTBLUE"><FONT COLOR = "WHITE"><B>Advertise</B></FONT></TD>
+		  <TD BGCOLOR = "WHITE" WIDTH = "4"></TD>
+		  <TD BGCOLOR = "LIGHTBLUE"><FONT COLOR = "WHITE"><B>login</B></FONT></TD>
+		  <TD BGCOLOR = "WHITE" WIDTH = "4"></TD>
+			  <TD BGCOLOR = "LIGHTBLUE"><FONT COLOR = "WHITE"><B>About Us</B></FONT></TD>
+			  <TD BGCOLOR = "WHITE" WIDTH = "4"></TD>
+			  	  <TD BGCOLOR = "LIGHTBLUE"><FONT COLOR = "WHITE"><B>Free sales</B></FONT></TD>
+				  <TD BGCOLOR = "WHITE" WIDTH = "4"></TD>
+				  	  <TD BGCOLOR = "LIGHTBLUE"><FONT COLOR = "WHITE"><B>Contact</B></FONT></TD>
+	 </TR>
+	 <TR><TD COLSPAN = "12"><HR HEIGHT = "3"></TD></TR>
+	 <TR HEIGHT = "150" ROWSPAN = "2"><TD COLSPAN = "10" HEIGHT = "26">Put Stuff Here</TD>
+	                  <TD WIDTH = "17%" BGCOLOR = "LIGHTBLUE"><CENTER><B>Login Form</B></CENTER><BR>
+					  &nbsp;&nbsp;&nbsp;Email : &nbsp;&nbsp;&nbsp;<INPUT TYPE = "TEXT"><BR>
+					  &nbsp;&nbsp;&nbsp;Password : &nbsp;&nbsp;&nbsp;<INPUT TYPE = "TEXT"><BR>
+					  </TD>
+	</TR>
+	<TR HEIGHT = "150" ROWSPAN = "2"><TD COLSPAN = "10">PUT MORE STUFF HERE</TD>
+					  <TD WIDTH = "17%">Advertise Here</TD>
+	</TR>
+	</TABLE>
+  </BODY>
+ </HTML>
+
+<% form_for :email, :url => { :controller => 'contact', :action => 'send_mail' } do |f| %> <%= f.label :name %><br /> <%= f.text_field :name, :size => 60 %><br /> <%= f.label :address %><br /> <%= f.text_field :address, :size => 60 %><br /> <%= f.label :subject %><br /> <%= f.text_field :subject, :size => 60 %><br /> <%= f.label :body %><br /> <%= f.text_area :body, :rols => 10, :cols => 60 %><br /> <%= submit_tag "Send Email "%> <% end %> 

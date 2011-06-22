@@ -1,0 +1,80 @@
+INPUT {
+background-color: #99ccff;
+color: black;
+font-family: arial, verdana, ms sans serif;
+font-weight: bold;
+font-size: 12pt
+}
+
+TEXTAREA {
+background-color: #99ccff;
+border: black 2px solid;
+color: black;
+font-family: arial, verdana, ms sans serif;
+font-size: 12pt;
+font-weight: normal
+} 
+
+
+
+body {background-image:url('/images/paper.gif');}
+
+
+body, p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size:   13px;
+  line-height: 18px;
+}
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+a:link { text-decoration: none } 
+a { color: #2B60DE; text-decoration: none }
+a:visited { color: #2B60DE; text-decoration: none }
+a:hover { color: #2B60DE; background-color:#FFFFFF; text-decoration: none }
+
+div.field, div.actions {
+  margin-bottom: 10px;
+}
+
+#notice {
+  color: green;
+}
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  margin-bottom: 0px;
+  background-color: #c00;
+  color: #fff;
+}
+
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+div { 
+    width: 353px; 
+    word-wrap: break-word; 
+} 

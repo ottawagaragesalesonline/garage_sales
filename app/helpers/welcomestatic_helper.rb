@@ -1,0 +1,2 @@
+module WelcomestaticHelper
+end

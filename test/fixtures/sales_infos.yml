@@ -1,0 +1,25 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  sales_ofdate: MyString
+  sales_title: MyString
+  sales_addr: MyString
+  sales_addr2: MyString
+  sales_location: MyString
+  sales_desc: MyText
+  sales_desc2: MyText
+  sales_bold: MyString
+  sales_star: MyString
+  sales_first: MyString
+
+two:
+  sales_ofdate: MyString
+  sales_title: MyString
+  sales_addr: MyString
+  sales_addr2: MyString
+  sales_location: MyString
+  sales_desc: MyText
+  sales_desc2: MyText
+  sales_bold: MyString
+  sales_star: MyString
+  sales_first: MyString
